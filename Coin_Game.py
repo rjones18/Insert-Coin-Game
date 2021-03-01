@@ -15,10 +15,9 @@ class Player:
 
   def collect_treasure(self):
     self.gold_coins += 1
-    if self.gold_coins == 10:
-      self.level_up()
-    elif self.gold_coins == 20:
-      self.level_up()
+    if self.gold_coins % 10 == 0:
+      self.level_up
+      
 
   def restart(self):
       self.gold_coins = 0
@@ -28,7 +27,7 @@ class Player:
   def do_battle(self, damage):
     self.health -= damage
     self.health
-    if self.health == 0:
+    if self.health <= 0:
       self.restart()
     
 
